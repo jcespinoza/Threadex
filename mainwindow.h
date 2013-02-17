@@ -18,14 +18,22 @@ public:
     ~MainWindow();
 private slots:
     void addText(QString);
-    
+    void increment();
     void on_pbCrear_clicked();
-
     void on_pbAgregar_clicked();
+    void showArray();
+signals:
+    void counterMaxReached();
 
 private:
     Ui::MainWindow *ui;
     int* arreglo;
+    int counter;
+    int maxCount;
+    int size;
+    //MiThread *threads;
+    void initThreads();
+    void tConnect();
 };
 
 #endif // MAINWINDOW_H
