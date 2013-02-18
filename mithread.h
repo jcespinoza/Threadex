@@ -26,7 +26,7 @@ signals:
     void newInt(int);
     void iFinished();
 public slots:
-    void emitFinished(){emit iFinished();}
+    void emitFinished(){deleteLater();emit iFinished();}
 };
 
 #endif // MITHREAD_H

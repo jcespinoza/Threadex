@@ -14,10 +14,10 @@ MiThread::MiThread(int a[], int i, int f, int flo, int t, QObject* parent=0):QTh
     floor = flo;
     top = t;
     connect(this, SIGNAL(finished()), this, SLOT(emitFinished()));
+    //connect(this, SIGNAL(finished(QPrivateSignal)), this, SLOT(deleteLater()));
 }
 
 void MiThread::run(){
-    qDebug() << "Threan::run";
 
     //QString id;
     //id.setNum((long)QThread::currentThread());
@@ -29,8 +29,9 @@ void MiThread::run(){
         int r = rand() + i;
         int gen = (r%(top+1-floor))+floor;
         temp.setNum(gen);
-        qDebug() << "gen was constructed with" << r << "%(" << top << " + 1 ) +" << floor;
-        qDebug() << "Writing" << gen << "to position" << i << ". Floor was" << floor << "and Top was" << top;
+        //qDebug() << "gen was constructed with" << r << "%(" << top << " + 1 ) +" << floor;
+        //qDebug() << "Writing" << gen << "to position" << i << ". Floor was" << floor << "and Top was" << top;
+        qDebug() << i << " -> " << gen;
         arr[i] = gen;
 
         //emit newString("Agregando ThreadID:" + id + "-- Valor:" + temp);
