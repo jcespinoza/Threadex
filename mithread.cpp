@@ -38,13 +38,3 @@ void MiThread::run(){
         //sleep(1);
     }
 ;}
-
-/*imprimir(ARREGLO,N);
- *qSort(ARREGLO+%,ARREGLO+N);
- *cout << "despues "
- *QTime t;
- *t.start();
- *metodo(ARREGLO,N);
- *qDebug() << "elapsed."
- *
-*/

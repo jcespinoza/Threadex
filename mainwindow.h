@@ -19,9 +19,10 @@ public:
 private slots:
     void addText(QString);
     void increment();
-    void on_pbCrear_clicked();
     void on_pbAgregar_clicked();
     void showArray();
+    void on_pbStart_clicked();
+
 signals:
     void counterMaxReached();
 
@@ -31,7 +32,7 @@ private:
     int counter;
     int maxCount;
     int size;
-    //MiThread *threads;
+    MiThread **threads;
     void initThreads();
     void tConnect();
 };
