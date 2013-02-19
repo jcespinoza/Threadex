@@ -44,9 +44,10 @@ void MainWindow::increment(){
 }
 
 void MainWindow::showArray(){
-    qDebug() << "All threads finished";
+    qDebug() << "All threads finished... Procesing array...";
+    ui->teTexto->append("Cargando numeros del Array...");
     for(int i = 0; i < size; i++){
-        ui->teTexto->append(QString().setNum(arreglo[i]));
+        ui->teTexto->append(QString::number(arreglo[i]));
     }
 }
 
@@ -57,6 +58,7 @@ void MainWindow::on_pbStart_clicked()
     else
         counter = 0;
     ui->teTexto->clear();
+    ui->teTexto->append("Generando Numeros...");
     for(int i = 0; i < maxCount; i++){
         threads[i]->start();
     }
