@@ -53,11 +53,7 @@ void MainWindow::showArray(){
 
 void MainWindow::on_pbStart_clicked()
 {
-    if(counter > 0)
-        return;
-    else
-        counter = 0;
-    ui->teTexto->clear();
+    ui->pbStart->setDisabled(true);
     ui->teTexto->append("Generando Numeros...");
     for(int i = 0; i < maxCount; i++){
         threads[i]->start();
